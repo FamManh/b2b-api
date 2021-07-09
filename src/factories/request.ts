@@ -1,3 +1,4 @@
+import fetch from 'node-fetch'
 import { parseJSON } from "../utils/helpers";
 import Config, { IConfigOptions } from "../config";
 import { IResponse, IOptions, IGet, IPost, IDelete } from "../types/apis";
@@ -75,9 +76,13 @@ class RequestFactory {
 
 
   get: IGet = async (path, signal = null, headers = DEFAULT_AUTH_HEADER) => {
-    console.log(`${this.config.protocol}://${this.config.host}${path}`)
+    console.log({url: `${this.config.protocol}://${this.config.host}${path}`})
+    // console.log(resDemo)
     try {
       const builtPath = `${this.config.protocol}://${this.config.host}${path}`;
+      console.log(builtPath)
+      
+
       const whenResponse = fetch(builtPath, {
         method: "GET",
         headers: {
@@ -85,7 +90,7 @@ class RequestFactory {
           ...headers,
           Authorization: this.config.token || "",
         },
-        credentials: "same-origin",
+        // credentials: "same-origin",
         signal,
       });
 
@@ -132,7 +137,7 @@ class RequestFactory {
           ...customHeaders,
         },
         body: !bodyTypeIsForm ? JSON.stringify(body) : body,
-        credentials: "same-origin",
+        // credentials: "same-origin",
         signal,
       });
 
@@ -174,7 +179,7 @@ class RequestFactory {
           Authorization: this.config.token || "",
         },
         body: JSON.stringify(body),
-        credentials: "same-origin",
+        // credentials: "same-origin",
         signal,
       });
 
@@ -210,7 +215,7 @@ class RequestFactory {
           Authorization: this.config.token || "",
         },
         body: body ? JSON.stringify(body) : "",
-        credentials: "same-origin",
+        // credentials: "same-origin",
       });
 
       const { data, hasError, code, message } = await apiProcessor(
