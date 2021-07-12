@@ -1,6 +1,6 @@
 import {IOptions} from '../types/apis'
 
-import Config, { IConfigOptions } from "../config";
+import Config from "../config";
 import RequestFactory from "../factories/request";
 
 class BaseExtend {
@@ -14,11 +14,6 @@ class BaseExtend {
     this.request = new RequestFactory(config, this.options);
   }
 
-  // All() {
-  //   const { limit, page } = this;
-  //   this.request.get(buildURL("", { limit, page }));
-  // }
-
   Limit(value: number) {
     this.limit = value;
     return this;
@@ -31,6 +26,7 @@ class BaseExtend {
 
   Options(options: IOptions<any>) {
     this.options = options;
+    this.request = new RequestFactory(this.config, options);
     return this;
   }
 }

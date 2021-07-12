@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'
+import fetch from "node-fetch";
 import { parseJSON } from "../utils/helpers";
 import Config, { IConfigOptions } from "../config";
 import { IResponse, IOptions, IGet, IPost, IDelete } from "../types/apis";
@@ -74,14 +74,11 @@ class RequestFactory {
     this.options = options || {};
   }
 
-
   get: IGet = async (path, signal = null, headers = DEFAULT_AUTH_HEADER) => {
-    console.log({url: `${this.config.protocol}://${this.config.host}${path}`})
-    // console.log(resDemo)
+
     try {
       const builtPath = `${this.config.protocol}://${this.config.host}${path}`;
-      console.log(builtPath)
-      
+      console.log(builtPath);
 
       const whenResponse = fetch(builtPath, {
         method: "GET",
