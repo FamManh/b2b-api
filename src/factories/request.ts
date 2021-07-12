@@ -175,7 +175,7 @@ class RequestFactory {
           ...headers,
           Authorization: this.config.token || "",
         },
-        body: JSON.stringify(body),
+        body: JSON.stringify(body),        
         // credentials: "same-origin",
         signal,
       });
