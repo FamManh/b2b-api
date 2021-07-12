@@ -14,17 +14,17 @@ class BaseExtend {
     this.request = new RequestFactory(config, this.options);
   }
 
-  Limit(value: number) {
+  setLimit(value: number) {
     this.limit = value;
     return this;
   }
 
-  Page(value: number) {
+  setPage(value: number) {
     this.page = value;
     return this;
   }
 
-  Options(options: IOptions<any>) {
+  setOptions(options: IOptions<any>) {
     this.options = options;
     this.request = new RequestFactory(this.config, options);
     return this;

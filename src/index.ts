@@ -4,11 +4,11 @@ import RequestFactory from "./factories/request";
 class B2BSdk {
   config: Config;
   request: RequestFactory;
-  Role: RoleEndpoint;
+  role: RoleEndpoint;
   constructor(config: Config) {
     this.config = config;
     this.request = new RequestFactory(config);
-    this.Role = new RoleEndpoint(config);
+    this.role = new RoleEndpoint(config);
   }
 }
 
