@@ -1,6 +1,5 @@
 import fetch from "node-fetch";
-import { parseJSON } from "../utils/helpers";
-import Config, { IConfigOptions } from "../config";
+import Config from "../config";
 import { IResponse, IOptions, IGet, IPost, IDelete } from "../types/apis";
 
 const JSON_HEADERS = {
@@ -127,7 +126,7 @@ class RequestFactory {
         };
 
     try {
-      const builtPath = `${this.config.protocol}://${this.config.host}/${path}`;
+      const builtPath = `${this.config.protocol}://${this.config.host}${path}`;
 
       const whenResponse = fetch(builtPath, {
         method: "POST",
@@ -167,7 +166,7 @@ class RequestFactory {
     headers = DEFAULT_AUTH_HEADER
   ) => {
     try {
-      const builtPath = `${this.config.protocol}://${this.config.host}/${path}`;
+      const builtPath = `${this.config.protocol}://${this.config.host}${path}`;
 
       const whenResponse = fetch(builtPath, {
         method: "PUT",
@@ -203,7 +202,7 @@ class RequestFactory {
 
   del: IDelete = async (path, body, options, headers = DEFAULT_AUTH_HEADER) => {
     try {
-      const builtPath = `${this.config.protocol}://${this.config.host}/${path}`;
+      const builtPath = `${this.config.protocol}://${this.config.host}${path}`;
 
       const whenResponse = fetch(builtPath, {
         method: "DELETE",

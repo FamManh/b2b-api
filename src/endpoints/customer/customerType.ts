@@ -1,16 +1,17 @@
+import { IPage } from '../../types/apis';
 import { IAddress, IFormalUser } from '../user/userType';
 
 
 export interface IResEmployees {
   data: IResEmployee[]
-  page: API.IPage
+  page: IPage
 }
 export interface IResCustomers {
   data: IResCustomer[]
-  page: API.IPage
+  page: IPage
 }
 export interface IResEmployee extends IResCustomer {
-  role: API.IPage
+  role: IPage
 }
 
 export interface IResCustomer extends IFormalUser {

@@ -1,3 +1,4 @@
+import { IPage } from "../../types/apis";
 
 export interface ICategory{
 	id: string
@@ -27,5 +28,5 @@ export interface IReqUpdateCategory extends IReqCategory {
 
 export interface IResListCategory {
   data: ICategory[]
-	page: API.IPage
+	page: IPage
 }
