@@ -9,5 +9,5 @@ export {
   IResGetProductByPriceBook,
   IResPriceBook,
   IResUpdatePriceBookPrices,
-	IProductByPriceBook,
+  IProductByPriceBook,
 } from './priceBookTypes'

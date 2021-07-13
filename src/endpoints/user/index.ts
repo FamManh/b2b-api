@@ -1,2 +1,8 @@
-export type { IAddress,EUserRole,ICountry,IFormalUser,IStateProvince,IUserAddress } from './userType'
-
+export type {
+  IAddress,
+  EUserRole,
+  ICountry,
+  IFormalUser,
+  IStateProvince,
+  IUserAddress,
+} from './userType'
