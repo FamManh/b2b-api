@@ -1,5 +1,5 @@
 import BaseExtend from "../../extends/base";
-import { IDigiApi, IResponse } from "../../types/apis";
+import {  IResponse } from "../../types/apis";
 import { buildURL } from "../../utils/helpers";
 
 import { ICategory, IReqCategory, IReqUpdateCategory, IResListCategory } from './categoryTypes'
