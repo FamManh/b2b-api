@@ -1,6 +1,5 @@
 import BaseExtend from '../../extends/base';
 import { IResponse } from "../../types/apis";
-import { buildURL } from "../../utils/helpers";
 import {
   IReqCreateCustomer,
   IReqCreateEmployee,

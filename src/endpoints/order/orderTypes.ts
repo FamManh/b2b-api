@@ -1,5 +1,7 @@
 import { IResCustomer } from '../customer/customerType'
 import { IPage } from '../../types/apis'
+import { IProductInCart, IProductsInCart } from '../product/productTypes'
+import { IAddress } from '../user'
 
 export interface IResOrderDetail extends IResOrder {
   freight_cost?: string
@@ -55,7 +57,7 @@ export interface IResOrder {
   date_created: number
 }
 export interface IOrderProduct
-  extends Omit<Store.IProductInCart, 'image_url' | 'list_price' | 'sale_price'> {
+  extends Omit<IProductInCart, 'image_url' | 'list_price' | 'sale_price'> {
   price_ex_tax: number
   variant_id: number
   total_ex_tax: number
@@ -66,7 +68,7 @@ export interface IConsignment {
   split_order_number?: string
   address: IAddress | null
   cart_line_item: {
-    items: Store.IProductsInCart
+    items: IProductsInCart
   }
   cart_number: string
 }
