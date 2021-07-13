@@ -1,3 +1,4 @@
+import {IPage} from '../../types/apis'
 export interface IPermissionItem {
   code: string
   name: string
@@ -28,7 +29,7 @@ export interface IRole {
 
 export interface IResGetRoles {
   data: IRole[]
-  page: API.IPage
+  page: IPage
 }
 
 export interface IReqCreateRole {

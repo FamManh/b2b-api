@@ -1,5 +1,5 @@
 import BaseExtend from '../../extends/base'
-import { IDigiApi, IResponse } from '../../types/apis'
+import { IResponse } from '../../types/apis'
 import {
   IReqCreatePriceBook,
   IReqUpdateAllDiscountPrice,
@@ -10,15 +10,15 @@ import {
   IResGetProductByPriceBook,
   IResPriceBook,
   IResUpdatePriceBookPrices,
-} from './priceBookTypes'
+} from '.'
 
 class PriceBookEndpoint extends BaseExtend {
-  getPriceBooks: IDigiApi<IResGetPriceBooks> = async () => {
+  getPriceBooks = async (): Promise<IResponse<IResGetPriceBooks>> => {
     const res = await this.request.get('/bo/price-list')
     return res
   }
 
-  getAllPriceBooks: IDigiApi<IResPriceBook[]> = async () => {
+  getAllPriceBooks = async (): Promise<IResponse<IResPriceBook[]>> => {
     const res = await this.request.get('/bo/price-list/all')
     return res
   }

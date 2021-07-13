@@ -1,5 +1,5 @@
 import { IPage } from '../../types/apis'
-import { IAddress, IFormalUser } from '../user/userType'
+import { IAddress, IFormalUser } from '../user'
 
 export interface IResEmployees {
   data: IResEmployee[]

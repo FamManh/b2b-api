@@ -6,7 +6,7 @@ import {
   IResGetCustomerGroup,
   IReqUpdateGroupAssignee,
   IReqUpdateGroupMaxValue,
-} from './customerGroupsType'
+} from '.'
 
 class CustomerGroupsEndpoint extends BaseExtend {
   getCustomerGroups = async (): Promise<IResponse<IResGetCustomerGroup[]>> => {

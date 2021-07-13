@@ -2,7 +2,7 @@ import BaseExtend from '../../extends/base'
 import { IResponse } from '../../types/apis'
 import { buildURL } from '../../utils/helpers'
 
-import { ICategory, IReqCategory, IReqUpdateCategory, IResListCategory } from './categoryTypes'
+import { ICategory, IReqCategory, IReqUpdateCategory, IResListCategory } from '.'
 
 class CategoryEndpoint extends BaseExtend {
   getAllCategories = async (): Promise<IResponse<ICategory[]>> => {

@@ -1,6 +1,6 @@
 import BaseExtend from '../../extends/base'
 import { IResponse } from '../../types/apis'
-import { IResLogin, IReqLogin } from './loginType'
+import { IResLogin, IReqLogin } from '.'
 
 class Login extends BaseExtend {
   doLogin = async (payload: IReqLogin): Promise<IResponse<IResLogin>> => {

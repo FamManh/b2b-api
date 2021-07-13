@@ -1,6 +1,6 @@
-import { IResCustomer } from '../customer/customerType'
+import { IResCustomer } from '../customer'
 import { IPage } from '../../types/apis'
-import { IProductInCart, IProductsInCart } from '../product/productTypes'
+import { IProductInCart, IProductsInCart } from '../product'
 import { IAddress } from '../user'
 
 export interface IResOrderDetail extends IResOrder {

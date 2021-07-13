@@ -7,7 +7,7 @@ import {
   IResCustomers,
   IResEmployee,
   IResEmployees,
-} from './customerType'
+} from '.'
 import { IAddress } from '../user'
 
 class CustomerEndpoint extends BaseExtend {

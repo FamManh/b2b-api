@@ -1,4 +1,4 @@
-import { IRole } from '../role/roleTypes'
+import { IRole } from '../role'
 
 export interface IReqLogin {
   email: string

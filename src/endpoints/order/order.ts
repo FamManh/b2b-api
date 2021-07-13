@@ -1,9 +1,9 @@
 import BaseExtend from '../../extends/base'
-import { IDigiApi, IResponse } from '../../types/apis'
-import { IReqCreateOrder, IResGetOrders, IResOrderDetail } from './orderTypes'
+import { IResponse } from '../../types/apis'
+import { IReqCreateOrder, IResGetOrders, IResOrderDetail } from '.'
 
 class OrderEndpoint extends BaseExtend {
-  getOrders: IDigiApi<IResGetOrders> = async () => {
+  getOrders = async (): Promise<IResponse<IResGetOrders>> => {
     const res = await this.request.get('/bo/orders')
     return res
   }

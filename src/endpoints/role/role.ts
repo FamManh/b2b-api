@@ -1,11 +1,11 @@
 import BaseExtend from '../../extends/base'
-import { IDigiApi, IResponse } from '../../types/apis'
+import {  IResponse } from '../../types/apis'
 import { buildURL } from '../../utils/helpers'
 
-import { IRole, IReqUpdateRole, IReqCreateRole, IResGetRoles } from './roleTypes'
+import { IRole, IReqUpdateRole, IReqCreateRole, IResGetRoles } from '.'
 
 class RoleEndpoint extends BaseExtend {
-  getAllRoles: IDigiApi<IRole[]> = async () => {
+  getAllRoles = async (): Promise<IResponse<IRole[]>> => {
     const res = await this.request.get('/bo/all-roles')
     return res
   }
@@ -15,7 +15,7 @@ class RoleEndpoint extends BaseExtend {
     return res
   }
 
-  getRoles: IDigiApi<IResGetRoles> = async () => {
+  getRoles = async (): Promise<IResponse<IResGetRoles>> => {
     const res = await this.request.get(
       buildURL(`/bo/roles`, { limit: this.limit, page: this.page }),
     )
@@ -48,7 +48,7 @@ class RoleEndpoint extends BaseExtend {
     return res
   }
 
-  getEmployeeRole: IDigiApi<IRole> = async () => {
+  getEmployeeRole = async (): Promise<IResponse<IRole>> => {
     const res = await this.request.get(`/bo/employee/role`)
     return res
   }

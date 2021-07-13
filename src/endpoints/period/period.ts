@@ -1,9 +1,9 @@
 import BaseExtend from '../../extends/base'
-import { IDigiApi } from '../../types/apis'
-import { IReqPeriods } from './periodTypes'
+import { IResponse } from '../../types/apis'
+import { IReqPeriods } from '.'
 
 class PeriodEndpoint extends BaseExtend {
-  getPeriods: IDigiApi<IReqPeriods[]> = async () => {
+  getPeriods = async (): Promise<IResponse<IReqPeriods[]>> => {
     const res = await this.request.get('/bo/periods')
     return res
   }

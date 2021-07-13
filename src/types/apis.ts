@@ -37,14 +37,6 @@ export interface IResRawData {
   success: boolean
 }
 
-export interface IDigiApiArgument<R, P> {
-  payload?: P
-}
-
-export interface IDigiApi<R, P = any> {
-  (arg?: IDigiApiArgument<R, P>): Promise<IResponse<R>>
-}
-
 export interface IPage {
   limit: number
   page: number

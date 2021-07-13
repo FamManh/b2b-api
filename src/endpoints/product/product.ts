@@ -1,5 +1,5 @@
 import BaseExtend from '../../extends/base'
-import { IDigiApi, IResponse } from '../../types/apis'
+import { IResponse } from '../../types/apis'
 import {
   IReqAddNewProduct,
   IReqAddNewBundleProduct,
@@ -14,12 +14,12 @@ import {
 } from '.'
 
 class ProductEndpoint extends BaseExtend {
-  getAllProducts: IDigiApi<IResGetProducts> = async () => {
+  getAllProducts = async (): Promise<IResponse<IResGetProducts>> => {
     const res = await this.request.get('/bo/products')
     return res
   }
 
-  reloadProducts: IDigiApi<null> = async () => {
+  reloadProducts = async (): Promise<IResponse<null>> => {
     const res = await this.request.get('/bo/fetch-products')
     return res
   }
