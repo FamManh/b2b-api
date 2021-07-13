@@ -1,5 +1,5 @@
 import { IPage } from '../../types/apis'
-import { IResCartItems } from '../quote/quoteTypes'
+import { IResCartItems } from '../quote'
 
 export type IProduct = Readonly<{
   categories: string[]

@@ -1,5 +1,5 @@
-import {IProductInCart} from '../../types/store';
-import {IPage} from '../../types/apis';
+import { IProductInCart } from '../../types/store'
+import { IPage } from '../../types/apis'
 
 export interface IQuoteData {
   customerId: string // user of quote ID
@@ -20,18 +20,6 @@ export interface QuoteItems {
   quantity: number
   variant_id?: string | null
   type_percent?: boolean
-}
-
-export interface commonQuoteData extends IQuoteData {
-  assigneeId: string
-  cartId: string
-  createDate: number
-  expireDate: number | null
-  expired: boolean
-  groupName: string | null
-  name: string | null
-  quoteComment: string | null
-  updateDate: number
 }
 
 export interface IQuoteCustomer {

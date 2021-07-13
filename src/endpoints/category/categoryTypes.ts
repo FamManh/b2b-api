@@ -1,7 +1,7 @@
-import { IPage } from "../../types/apis";
+import { IPage } from '../../types/apis'
 
-export interface ICategory{
-	id: string
+export interface ICategory {
+  id: string
   parent_id: number
   name: string
   label: null | string
@@ -28,5 +28,5 @@ export interface IReqUpdateCategory extends IReqCategory {
 
 export interface IResListCategory {
   data: ICategory[]
-	page: IPage
+  page: IPage
 }

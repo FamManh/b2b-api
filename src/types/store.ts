@@ -1,4 +1,3 @@
-
 export type IProduct = Readonly<{
   categories: string[]
   product_uuid?: string
@@ -26,7 +25,10 @@ export type IProduct = Readonly<{
   })[]
 }>
 
-export type IProductInCart = Omit<IProduct, 'max_price' | 'min_price' | 'periods' | 'description'> & {
+export type IProductInCart = Omit<
+  IProduct,
+  'max_price' | 'min_price' | 'periods' | 'description'
+> & {
   quantity: number
   id: string
   price?: number
