@@ -1,4 +1,3 @@
-import { IPage } from '../../types/apis'
 export interface IPermissionItem {
   code: string
   name: string
@@ -24,11 +23,12 @@ export interface IRole {
   max_approval: number
   max_discount_percent: number
   permissions: IPermission[]
+  permissions_code?: string[] | null
 }
 
 export interface IResGetRoles {
   data: IRole[]
-  page: IPage
+  page: API.IPage
 }
 
 export interface IReqCreateRole {
@@ -36,6 +36,12 @@ export interface IReqCreateRole {
   role_description: string
 }
 
-export interface IReqUpdateRole extends Omit<IRole, 'permissions'> {
+export interface IReqUpdateRole {
+  role_code: number
+  role_name: string
+  role_description: string
+  enable: boolean
+  max_approval: number | string
+  max_discount_percent: number | string
   permissions_code: string[]
 }
