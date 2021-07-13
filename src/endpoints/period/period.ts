@@ -1,6 +1,6 @@
-import BaseExtend from "../../extends/base";
-import { IDigiApi } from "../../types/apis";
-import { IReqPeriods } from "./periodTypes";
+import BaseExtend from '../../extends/base'
+import { IDigiApi } from '../../types/apis'
+import { IReqPeriods } from './periodTypes'
 
 class PeriodEndpoint extends BaseExtend {
   getPeriods: IDigiApi<IReqPeriods[]> = async () => {
@@ -9,4 +9,4 @@ class PeriodEndpoint extends BaseExtend {
   }
 }
 
-export default PeriodEndpoint;
+export default PeriodEndpoint

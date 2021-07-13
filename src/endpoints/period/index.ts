@@ -1,1 +1,1 @@
-export { default } from "./period";
+export { default } from './period'

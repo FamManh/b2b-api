@@ -1,4 +1,4 @@
-interface IParams{
+interface IParams {
   limit: number
   page: number
 }
@@ -8,7 +8,7 @@ function formatQueryString(key: string, value: string) {
 }
 
 function buildQueryParams({ page, limit }: Partial<IParams>) {
-  const query: {[key: string]: string} = {}
+  const query: { [key: string]: string } = {}
 
   if (limit) {
     query.limit = `${limit}`
@@ -19,15 +19,12 @@ function buildQueryParams({ page, limit }: Partial<IParams>) {
   }
 
   return Object.keys(query)
-    .map(k => formatQueryString(k, query[k]))
+    .map((k) => formatQueryString(k, query[k]))
     .join('&')
 }
 
 export function buildURL(endpoint: string, params: Partial<IParams>): string {
-  if (
-    params.page ||
-    params.limit
-  ) {
+  if (params.page || params.limit) {
     const paramsString = buildQueryParams(params)
 
     return `${endpoint}?${paramsString}`
@@ -36,19 +33,19 @@ export function buildURL(endpoint: string, params: Partial<IParams>): string {
   return endpoint
 }
 
-interface IParseJSON{
+interface IParseJSON {
   status: number
   ok: boolean
   json: any
 }
 
 export function parseJSON(response: Response): Promise<IParseJSON> {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     response.text().then((body: string) => {
       resolve({
         status: response.status,
         ok: response.ok,
-        json: body !== '' ? JSON.parse(body) : '{}'
+        json: body !== '' ? JSON.parse(body) : '{}',
       })
     })
   })

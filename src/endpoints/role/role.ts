@@ -1,19 +1,14 @@
-import BaseExtend from "../../extends/base";
-import { IDigiApi } from "../../types/apis";
-import { buildURL } from "../../utils/helpers";
+import BaseExtend from '../../extends/base'
+import { IDigiApi } from '../../types/apis'
+import { buildURL } from '../../utils/helpers'
 
-import {
-  IRole,
-  IReqUpdateRole,
-  IReqCreateRole,
-  IResGetRoles,
-} from "./roleTypes";
+import { IRole, IResGetRoles } from './roleTypes'
 
 class RoleEndpoint extends BaseExtend {
   getAllRoles: IDigiApi<IRole[]> = async () => {
-    const res = await this.request.get(`/bo/all-roles`);
-    return res;
-  };
+    const res = await this.request.get(`/bo/all-roles`)
+    return res
+  }
 
   // getRoleByRoleCode: API.DigiApi<IRole, string> = async ({ payload }) => {
   //   const res = await this.request.get(`/bo/role/${payload}`);
@@ -22,10 +17,10 @@ class RoleEndpoint extends BaseExtend {
 
   getRoles: IDigiApi<IResGetRoles> = async () => {
     const res = await this.request.get(
-      buildURL(`/bo/roles`, { limit: this.limit, page: this.page })
-    );
-    return res;
-  };
+      buildURL(`/bo/roles`, { limit: this.limit, page: this.page }),
+    )
+    return res
+  }
 
   // updateRole: API.DigiApi<IRole, IReqUpdateRole> = async ({ payload }) => {
   //   const res = await this.request.put(`/bo/role`, payload);
@@ -63,4 +58,4 @@ class RoleEndpoint extends BaseExtend {
   // };
 }
 
-export default RoleEndpoint;
+export default RoleEndpoint

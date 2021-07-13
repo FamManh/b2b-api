@@ -1,4 +1,4 @@
-import { IPage } from "../../types/apis";
+import { IPage } from '../../types/apis'
 
 export interface IResPriceBook {
   id: number

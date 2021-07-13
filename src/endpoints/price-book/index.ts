@@ -1,1 +1,1 @@
-export { default } from "./priceBook";
+export { default } from './priceBook'

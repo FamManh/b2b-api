@@ -1,1 +1,1 @@
-export { default } from './customerGroups';
+export { default } from './customerGroups'

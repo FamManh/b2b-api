@@ -1,5 +1,5 @@
-import BaseExtend from "../../extends/base";
-import { IDigiApi, IResponse } from "../../types/apis";
+import BaseExtend from '../../extends/base'
+import { IDigiApi, IResponse } from '../../types/apis'
 import {
   IReqCreatePriceBook,
   IReqUpdateAllDiscountPrice,
@@ -10,67 +10,61 @@ import {
   IResGetProductByPriceBook,
   IResPriceBook,
   IResUpdatePriceBookPrices,
-} from "./priceBookTypes";
+} from './priceBookTypes'
 
 class PriceBookEndpoint extends BaseExtend {
   getPriceBooks: IDigiApi<IResGetPriceBooks> = async () => {
-    const res = await this.request.get("/bo/price-list");
-    return res;
-  };
+    const res = await this.request.get('/bo/price-list')
+    return res
+  }
 
   getAllPriceBooks: IDigiApi<IResPriceBook[]> = async () => {
-    const res = await this.request.get("/bo/price-list/all");
-    return res;
-  };
+    const res = await this.request.get('/bo/price-list/all')
+    return res
+  }
 
-  getPriceBook = async (
-    priceBookId: number
-  ): Promise<IResponse<IResPriceBook>> => {
-    const res = await this.request.get(`/bo/price-list/${priceBookId}`);
-    return res;
-  };
+  getPriceBook = async (priceBookId: number): Promise<IResponse<IResPriceBook>> => {
+    const res = await this.request.get(`/bo/price-list/${priceBookId}`)
+    return res
+  }
 
-  deletePriceBook = async (
-    priceBookId: number
-  ): Promise<IResponse<IResPriceBook>> => {
-    const res = await this.request.del(`/bo/price-list/${priceBookId}`, null);
-    return res;
-  };
+  deletePriceBook = async (priceBookId: number): Promise<IResponse<IResPriceBook>> => {
+    const res = await this.request.del(`/bo/price-list/${priceBookId}`, null)
+    return res
+  }
 
   createPriceBook = async (
-    payload: IReqCreatePriceBook
+    payload: IReqCreatePriceBook,
   ): Promise<IResponse<IResCreatePriceBook>> => {
-    const res = await this.request.post("/bo/price-list", payload);
-    return res;
-  };
+    const res = await this.request.post('/bo/price-list', payload)
+    return res
+  }
 
-  updatePriceBookInfo = async (
-    payload: IReqUpdatePriceBook
-  ): Promise<IResponse<IResPriceBook>> => {
-    const res = await this.request.post(`/bo/price-list/add-group`, payload);
-    return res;
-  };
+  updatePriceBookInfo = async (payload: IReqUpdatePriceBook): Promise<IResponse<IResPriceBook>> => {
+    const res = await this.request.post(`/bo/price-list/add-group`, payload)
+    return res
+  }
 
   updatePriceBookPrices = async (
-    payload: IReqUpdatePriceBookPrices
+    payload: IReqUpdatePriceBookPrices,
   ): Promise<IResponse<IResUpdatePriceBookPrices>> => {
-    const res = await this.request.post(`/bo/add-product-prices`, payload);
-    return res;
-  };
+    const res = await this.request.post(`/bo/add-product-prices`, payload)
+    return res
+  }
 
   getProductsByPriceBook = async (
-    priceBookId: number
+    priceBookId: number,
   ): Promise<IResponse<IResGetProductByPriceBook>> => {
-    const res = await this.request.get(`/bo/products/${priceBookId}`);
-    return res;
-  };
+    const res = await this.request.get(`/bo/products/${priceBookId}`)
+    return res
+  }
 
   updateAllProductsDiscountPrice = async (
-    payload: IReqUpdateAllDiscountPrice
+    payload: IReqUpdateAllDiscountPrice,
   ): Promise<IResponse<boolean>> => {
-    const res = await this.request.post("/bo/add-all-product-price", payload);
-    return res;
-  };
+    const res = await this.request.post('/bo/add-all-product-price', payload)
+    return res
+  }
 }
 
-export default PriceBookEndpoint;
+export default PriceBookEndpoint

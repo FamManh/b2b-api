@@ -1,5 +1,4 @@
-import { IAddress, IFormalUser } from '../user/userType';
-
+import { IAddress, IFormalUser } from '../user/userType'
 
 export interface IResEmployees {
   data: IResEmployee[]

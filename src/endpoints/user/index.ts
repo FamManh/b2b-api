@@ -1,3 +1,1 @@
-export type {
-IAddress
-} from "./userType";
+export type { IAddress } from './userType'

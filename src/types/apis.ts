@@ -9,11 +9,7 @@ export interface IOptions<T> {
 }
 
 export interface IGet {
-  (
-    path: string,
-    AbortSignal?: AbortSignal | null,
-    headers?: Record<string, string>,
-  ): any
+  (path: string, AbortSignal?: AbortSignal | null, headers?: Record<string, string>): any
 }
 
 export interface IPost {
@@ -55,4 +51,3 @@ export interface IPage {
   total_page: number
   total_record: number
 }
-

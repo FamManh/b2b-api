@@ -5,15 +5,33 @@
   "main": "index.js",
   "private": false,
   "scripts": {
-    "build": "tsc",
     "start": "ts-node ./src/index.ts",
-    "test": "ts-node ./test/index.ts"
+    "test": "ts-node ./test/index.ts",
+    "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
+    "format": "npx prettier --write .",
+    "clean": "rm -rf dist build",
+    "build": "tsc -p tsconfig.json",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.@(ts|tsx)": [
+      "yarn lint",
+      "yarn format",
+      "git add ."
+    ]
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/node-fetch": "^2.5.11",
+    "@typescript-eslint/eslint-plugin": "^4.28.3",
+    "@typescript-eslint/parser": "^4.28.3",
+    "esbuild": "^0.12.15",
+    "eslint": "^7.30.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.2",
     "ts-node": "^10.0.0",
     "typescript": "^4.3.3"
   },

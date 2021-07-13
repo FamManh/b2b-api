@@ -1,4 +1,4 @@
-import { IPage } from '../../types/apis';
+import { IPage } from '../../types/apis'
 import { IResCartItems } from '../quote/quoteTypes'
 
 export type IProduct = Readonly<{
@@ -30,7 +30,10 @@ export type IProduct = Readonly<{
 
 export type IProducts = ReadonlyArray<IProduct>
 
-export type IProductInCart = Omit<IProduct, 'max_price' | 'min_price' | 'periods' | 'description'> & {
+export type IProductInCart = Omit<
+  IProduct,
+  'max_price' | 'min_price' | 'periods' | 'description'
+> & {
   quantity: number
   id: string
   price?: number
