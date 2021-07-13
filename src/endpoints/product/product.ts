@@ -11,7 +11,7 @@ import {
   IReqGetProductByCategoryId,
   IProduct,
   IProductInCart,
-} from './productTypes'
+} from '.'
 
 class ProductEndpoint extends BaseExtend {
   getAllProducts: IDigiApi<IResGetProducts> = async () => {

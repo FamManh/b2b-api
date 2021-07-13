@@ -22,18 +22,6 @@ export interface QuoteItems {
   type_percent?: boolean
 }
 
-export interface commonQuoteData extends IQuoteData {
-  assigneeId: string
-  cartId: string
-  createDate: number
-  expireDate: number | null
-  expired: boolean
-  groupName: string | null
-  name: string | null
-  quoteComment: string | null
-  updateDate: number
-}
-
 export interface IQuoteCustomer {
   customerApprovalFirstName: string | null
   customerApprovalLastName: string | null

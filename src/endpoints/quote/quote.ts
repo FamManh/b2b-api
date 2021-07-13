@@ -12,7 +12,7 @@ import {
   IReqUpdateQuoteItems,
   IReqQuoteDetail,
   IResQuoteList,
-} from './quoteType'
+} from '.'
 
 class Quote extends BaseExtend {
   getAllQuotes = async (): Promise<IResponse<IResQuoteList>> => {
