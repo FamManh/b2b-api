@@ -5,6 +5,7 @@ const load = async () => {
   const res1 = await b2b.role.setLimit(10).setPage(1).getRoles()
   // console.log(res);
   // console.log(res1);
+
   
 };
 
