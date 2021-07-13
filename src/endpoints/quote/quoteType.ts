@@ -1,5 +1,5 @@
-import {IProductInCart} from '../../types/store';
-import {IPage} from '../../types/apis';
+import { IProductInCart } from '../../types/store'
+import { IPage } from '../../types/apis'
 
 export interface IQuoteData {
   customerId: string // user of quote ID
