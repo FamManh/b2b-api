@@ -27,6 +27,7 @@ const apiProcessor = async (
   const { data, message, hasError, code } = calculatedResponse;
 
   if (hasError) {
+    
     options?.onError && options?.onError(message, code);
     throw new Error();
   }

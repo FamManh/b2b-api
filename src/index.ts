@@ -6,6 +6,7 @@ import CustomerEndpoint from "./endpoints/customer";
 import CustomerGroupsEndpoint from "./endpoints/customerGroups";
 import File from "./endpoints/file";
 import Login from "./endpoints/login";
+import Quote from "./endpoints/quote";
 
 class B2BSdk {
   config: Config;
@@ -16,7 +17,7 @@ class B2BSdk {
   customerGroups:CustomerGroupsEndpoint
   file:File
   login:Login
-  
+  quote:Quote
   constructor(config: Config) {
     this.config = config;
     this.request = new RequestFactory(config);
@@ -25,7 +26,8 @@ class B2BSdk {
     this.customer=new CustomerEndpoint(config)
     this.customerGroups=new CustomerGroupsEndpoint(config)
     this.file=new File(config);
-    this.login=new Login(config)
+    this.login=new Login(config);
+    this.quote=new Quote(config);
   }
 }
 
